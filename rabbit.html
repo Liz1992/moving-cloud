@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>rabbit-animation</title>
+	<style type="text/css">
+	    *{
+	    	padding: 0;
+	    	margin: 0;
+	    	border: none;
+	    }
+	    body{
+	    	overflow: hidden;
+	    }
+	    .container{
+	    	width: 100%;
+	    	height: 100vh;
+	    }
+		.sky{
+			position: relative;
+			z-index: 1;
+			height: 60%;
+			background: linear-gradient(rgb(196,228,253),transparent);
+		}
+		.lawn{
+			position: relative;
+			z-index: 1;
+			height: 40%;
+			background: linear-gradient(transparent,rgb(148,190,89));
+		}
+		img{
+			position: absolute;
+			z-index: 2;
+        	right: 200px;
+        	bottom: 50px;
+        	width: 200px;
+        	height: 200px;
+        }
+		.cloud{
+			position: relative;
+			z-index: 1;
+			width: 80px;
+			height: 40px;
+			border-radius: 35px/35px 35px 15px 15px;
+			background: #FFFFFF;
+			box-shadow: 0 0 12px 10px #FFFFFF;
+		}
+		.cloud::before{
+			position: absolute;
+			z-index: 2;
+			left: -20px;
+			top: 30px;
+			width: 80px;
+			height: 40px;
+			border-radius: 50%;
+			content: "";
+			display: block;
+			background: #FFFFFF;
+			box-shadow: 0 0 12px 10px #FFFFFF;
+
+		}
+		.cloud::after{
+			position: absolute;
+			z-index: 2;
+			left: 50px;
+			top: 23px;
+			width: 80px;
+			height: 40px;
+			border-radius: 35px/30px 20px 15px 15px;
+			content: "";
+			display: block;
+			background: #FFFFFF;
+			box-shadow: 0 0 12px 10px #FFFFFF;
+
+		}
+		.cloud1{
+			left: 150px;
+			top: 110px;
+			opacity: .9;
+			transform: scale(2);
+			animation: cloudMove 16s linear infinite;
+		}
+		.cloud2{
+			left: 600px;
+			top: 100px;
+			opacity: .7;
+            animation: cloudMove 19s linear infinite;
+		}
+		.cloud3{
+			left: 500px;
+			top: 90px;
+            opacity:.4;
+            transform: scale(3);
+            animation: cloudMove 15s linear infinite;
+		}
+		.cloud4{
+			left: 1000px;
+			top: 100px;
+			opacity: .5;
+			transform: scale(.7);
+			animation: cloudMove 20s linear infinite;
+		}
+		.cloud5{
+			left: 750px;
+			top: 7;
+			opacity: .7;
+			transform: scale(.8);
+			animation: cloudMove 17s linear infinite;
+		}
+        @keyframes cloudMove{
+        	from{
+        		left: 100%;
+        	}
+        	to{
+                left: -100%;
+        	}
+        }
+	</style>
+</head>
+<body>
+	<div class="container">
+	    <div class="sky">
+		    <div class="cloud cloud1"></div>
+		    <div class="cloud cloud2"></div>
+		    <div class="cloud cloud3"></div>
+		    <div class="cloud cloud4"></div>
+		    <div class="cloud cloud5"></div>
+	    </div>
+	    <div class="lawn">
+	    	<img src="rabbit.png">
+	    </div>
+    </div>
+</body>
+</html>
